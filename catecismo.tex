@@ -1,0 +1,57 @@
+\documentclass[12pt]{book}
+
+\usepackage[utf8]{inputenc} % Soporte unicode
+\usepackage[spanish]{babel} % Idioma
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[skip=7pt, indent=0pt]{parskip}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{ebgaramond}
+\usepackage{fancyhdr}
+
+\newcounter{pre}
+\setcounter{pre}{1}
+\newcommand{\pre}[1]{%
+	\textbf{\thepre. #1} -%
+	\stepcounter{pre}%
+}
+
+\newcounter{sub}
+\setcounter{sub}{1}
+\newcommand{\sub}[1]{%
+	\thesubº. #1%
+	\stepcounter{sub}%
+}
+
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+
+\titleformat{\chapter}[display]
+	{\vspace{-3cm}\huge\bfseries\centering}
+	{\Roman{chapter}}
+	{0pt}
+	{}
+
+\titleformat{\section}
+	{\large\bfseries\centering} % Format for the title
+	{\Roman{section}. } % Label (number) of the section
+	{0em} % Horizontal space between label and title
+	{} % Code before the title
+
+\titleformat{\subsection}
+	{\centering\itshape} % Format for the title
+	{\sub} % Label (number) of the section
+	{0em} % Horizontal space between label and title
+	{} % Code before the title
+
+\title{CATECISMO MAYOR}
+\author{San Pío X}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\input{prel.tex}
+	\input{cap1.tex}
+\end{document}
